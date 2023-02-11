@@ -111,7 +111,7 @@ class NoiseColorFit extends StatelessWidget {
                         Icon(Icons.star, color: Colors.amber),
                         Icon(Icons.star, color: Colors.amber),
                         Icon(Icons.star, color: Colors.amber),
-                        Icon(Icons.star, color: Colors.amber)
+                        Icon(Icons.star, color: Colors.amber),
                       ],
                     ),
                   ),
