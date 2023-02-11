@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_design_sample/my_cart.dart';
-import 'package:ui_design_sample/noise_color_fit.dart';
+import 'package:ui_design_sample/my_cart_Page.dart';
+import 'package:ui_design_sample/noise_color_fit_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

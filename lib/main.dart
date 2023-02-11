@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_design_sample/home_page.dart';
-import 'package:ui_design_sample/my_cart.dart';
-import 'package:ui_design_sample/noise_color_fit.dart';
+import 'package:ui_design_sample/my_cart_Page.dart';
+import 'package:ui_design_sample/noise_color_fit_page.dart';
 
 void main() {
   runApp(const MyApp());
