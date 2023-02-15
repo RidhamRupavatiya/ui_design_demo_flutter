@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
         index: currentIndex,
         items:[
           Icon(Icons.home),
-          Icon(Icons.heart_broken),
+          Icon(Icons.favorite),
           InkWell(
             child: Icon(Icons.shopping_cart_sharp),
             onTap: () {
@@ -416,7 +416,7 @@ class _HomePageState extends State<HomePage> {
                                     Padding(
                                       padding: const EdgeInsets.only(
                                           right: 15, top: 6),
-                                      child: Icon(Icons.heart_broken_sharp),
+                                      child: Icon(Icons.favorite_outlined),
                                     ),
                                   ],
                                 ),
@@ -488,7 +488,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(
                                         right: 15, top: 7),
-                                    child: Icon(Icons.heart_broken_sharp),
+                                    child: Icon(Icons.favorite_outlined),
                                   ),
                                 ],
                               ),
@@ -566,7 +566,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(
                                         right: 15, top: 7),
-                                    child: Icon(Icons.heart_broken_sharp),
+                                    child: Icon(Icons.favorite_outlined),
                                   ),
                                 ],
                               ),
@@ -636,7 +636,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(
                                         right: 15, top: 7),
-                                    child: Icon(Icons.heart_broken_sharp),
+                                    child: Icon(Icons.favorite_outlined),
                                   ),
                                 ],
                               ),
