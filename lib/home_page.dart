@@ -11,6 +11,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var CurrentIndex = 1;
+  var _iconColor = Colors.black;
+  var _containerIndex = 0;
+  Color _containerColor = Color(0xFFDCDCDC);
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -20,23 +24,28 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.deepOrangeAccent,
         index: currentIndex,
-        items:[
-          Icon(Icons.home),
-          Icon(Icons.favorite),
-          InkWell(
-            child: Icon(Icons.shopping_cart_sharp),
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: ((context) {
-                return MyCart();
-              })));
-            },
+        items: [
+          Icon(
+            Icons.home,
+          ),
+          Icon(
+            Icons.favorite,
+          ),
+          Icon(
+            Icons.shopping_cart_sharp,
           ),
           Icon(Icons.account_circle_outlined),
         ],
         onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
+          currentIndex = index;
+          if (currentIndex == 2) {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => MyCart()),
+            );
+          }else
+            setState(() {
+              currentIndex = index;
+            });
         },
       ),
       body: SingleChildScrollView(
@@ -313,13 +322,27 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 5, right: 10),
-                      child: Container(
-                          height: 55,
-                          width: 55,
-                          child: Icon(Icons.watch),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Color(0xFFDCDCDC))),
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            if(_containerColor == Color(0xFFDCDCDC) && _iconColor==Colors.black){
+                              _containerColor = Colors.orange;
+                              _iconColor = Colors.white;
+                            }
+                            else{
+                              _containerColor = Color(0xFFDCDCDC);
+                              _iconColor=Colors.black;
+                            }
+                          });
+                        },
+                        child: Container(
+                            height: 55,
+                            width: 55,
+                            child: Icon(Icons.watch,color: _iconColor),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: _containerColor)),
+                      ),
                     ),
                     Padding(
                       padding:
@@ -442,9 +465,11 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.only(
                                       left: 15, right: 15, top: 4),
                                   child: Row(children: [
-                                    Icon(Icons.currency_rupee),
+                                    Icon(Icons.currency_rupee, size: 17),
                                     Text('4,500',
-                                        style: TextStyle(fontSize: 17)),
+                                        style: TextStyle(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.bold)),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 15),
                                       child: Text(
@@ -514,8 +539,11 @@ class _HomePageState extends State<HomePage> {
                                 padding: const EdgeInsets.only(
                                     left: 15, right: 15, top: 4),
                                 child: Row(children: [
-                                  Icon(Icons.currency_rupee),
-                                  Text('5,500', style: TextStyle(fontSize: 17)),
+                                  Icon(Icons.currency_rupee, size: 17),
+                                  Text('5,500',
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold)),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 25),
                                     child: Text(
@@ -592,8 +620,11 @@ class _HomePageState extends State<HomePage> {
                                 padding: const EdgeInsets.only(
                                     left: 15, right: 15, top: 4),
                                 child: Row(children: [
-                                  Icon(Icons.currency_rupee),
-                                  Text('6,500', style: TextStyle(fontSize: 17)),
+                                  Icon(Icons.currency_rupee, size: 17),
+                                  Text('6,500',
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold)),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 25),
                                     child: Text(
@@ -661,8 +692,14 @@ class _HomePageState extends State<HomePage> {
                                 padding: const EdgeInsets.only(
                                     left: 15, right: 15, top: 4),
                                 child: Row(children: [
-                                  Icon(Icons.currency_rupee),
-                                  Text('4,500', style: TextStyle(fontSize: 17)),
+                                  Icon(
+                                    Icons.currency_rupee,
+                                    size: 17,
+                                  ),
+                                  Text('4,500',
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold)),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 25),
                                     child: Text(
