@@ -4,6 +4,7 @@ import 'package:ui_design_sample/my_cart_Page.dart';
 import 'package:ui_design_sample/noise_color_fit_page.dart';
 
 class HomePage extends StatefulWidget {
+
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -11,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var CurrentIndex = 1;
   var _iconColor = Colors.black;
   var _containerIndex = 0;
   Color _containerColor = Color(0xFFDCDCDC);
@@ -34,7 +34,9 @@ class _HomePageState extends State<HomePage> {
           Icon(
             Icons.shopping_cart_sharp,
           ),
-          Icon(Icons.account_circle_outlined),
+          Icon(
+            Icons.account_circle_outlined,
+          ),
         ],
         onTap: (index) {
           currentIndex = index;
@@ -325,20 +327,20 @@ class _HomePageState extends State<HomePage> {
                       child: InkWell(
                         onTap: () {
                           setState(() {
-                            if(_containerColor == Color(0xFFDCDCDC) && _iconColor==Colors.black){
+                            if(_containerColor == Color(0xFFDCDCDC) &&
+                                _iconColor == Colors.black) {
                               _containerColor = Colors.orange;
                               _iconColor = Colors.white;
-                            }
-                            else{
+                            } else {
                               _containerColor = Color(0xFFDCDCDC);
-                              _iconColor=Colors.black;
+                              _iconColor = Colors.black;
                             }
                           });
                         },
                         child: Container(
                             height: 55,
                             width: 55,
-                            child: Icon(Icons.watch,color: _iconColor),
+                            child: Icon(Icons.watch, color: _iconColor),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
                                 color: _containerColor)),
@@ -429,7 +431,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(
@@ -477,7 +479,7 @@ class _HomePageState extends State<HomePage> {
                                         style: TextStyle(
                                             fontSize: 12,
                                             decoration:
-                                                TextDecoration.lineThrough),
+                                            TextDecoration.lineThrough),
                                       ),
                                     ),
                                   ]),
@@ -503,11 +505,11 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 25, top: 7),
+                                    const EdgeInsets.only(left: 25, top: 7),
                                     child: Text('50% OFF'),
                                   ),
                                   Padding(
@@ -551,7 +553,7 @@ class _HomePageState extends State<HomePage> {
                                       style: TextStyle(
                                           fontSize: 12,
                                           decoration:
-                                              TextDecoration.lineThrough),
+                                          TextDecoration.lineThrough),
                                     ),
                                   ),
                                 ]),
@@ -584,11 +586,11 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 25, top: 7),
+                                    const EdgeInsets.only(left: 25, top: 7),
                                     child: Text('50% OFF'),
                                   ),
                                   Padding(
@@ -632,7 +634,7 @@ class _HomePageState extends State<HomePage> {
                                       style: TextStyle(
                                           fontSize: 12,
                                           decoration:
-                                              TextDecoration.lineThrough),
+                                          TextDecoration.lineThrough),
                                     ),
                                   ),
                                 ]),
@@ -657,11 +659,11 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 25, top: 7),
+                                    const EdgeInsets.only(left: 25, top: 7),
                                     child: Text('50% OFF'),
                                   ),
                                   Padding(
@@ -707,7 +709,7 @@ class _HomePageState extends State<HomePage> {
                                       style: TextStyle(
                                           fontSize: 12,
                                           decoration:
-                                              TextDecoration.lineThrough),
+                                          TextDecoration.lineThrough),
                                     ),
                                   ),
                                 ]),
